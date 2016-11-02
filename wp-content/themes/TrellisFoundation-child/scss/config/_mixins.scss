@@ -1,0 +1,119 @@
+/**
+ * Custom Mixins
+ * ----------------------------------------------------------------------------
+ */
+@mixin border-radius($radius...) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  -khtml-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadows...) {
+  -webkit-box-shadow: $shadows;
+  -moz-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+@mixin transition($transitions...) {
+  -webkit-transition: $transitions;
+  -moz-transition: $transitions;
+  -o-transition: $transitions;
+  transition: $transitions;
+}
+
+@mixin transform($transformations...) {
+  -webkit-transition: $transformations;
+  -moz-transition: $transformations;
+  transition: $transformations;
+}
+
+@mixin rotate($rotations...) {
+  -webkit-transform: rotate($rotations);
+  -moz-transform: rotate($rotations);
+  -ms-transform: rotate($rotations);
+  -o-transform: rotate($rotations);
+}
+
+@mixin gradient($colorTop, $stopTop, $colorBottom, $stopBottom) {
+  background-color: $colorBottom;
+  background-image: -webkit-gradient(linear, top, bottom, from($colorTop), to($colorBottom));
+  background-image: -webkit-linear-gradient(top, $colorTop $stopTop, $colorBottom $stopBottom);
+  background-image: -moz-linear-gradient(top, $colorTop $stopTop, $colorBottom $stopBottom);
+  background-image: -o-linear-gradient(top, $colorTop $stopTop, $colorBottom $stopBottom);
+  background-image: linear-gradient(to bottom, $colorTop $stopTop, $colorBottom $stopBottom);
+}
+
+@mixin scale($scale) {
+  transform: scale($scale);
+  -webkit-transform: scale($scale);
+  -moz-transform: scale($scale);
+  -o-transform: scale($scale);
+  -ms-transform: scale($scale);
+}
+
+/**
+ * Section Seperator Triangle
+ * ----------------------------------------------------------------------------
+ */
+@mixin triangle($direction: up, $size: rem-calc(5), $color: #000000 ) {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: block;
+
+  @if $direction == up {
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+    border-bottom: $size solid $color;
+    border-top: none;
+  }
+
+  @if $direction == down {
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+    border-top: $size solid $color;
+    border-bottom: none;
+  }
+
+  @if $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    border-right: none;
+  }
+
+  @if $direction == left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    border-left: none;
+  }
+}
+
+@mixin icomoon($icon, $color: $body-font-color, $background-color: transparent, $position: "before", $replace: false) {
+  // If we're replacing the text, set font-size to 0
+  @if $replace {
+    font-size: 0;
+  }
+  // Pseudo-element properties
+  &:#{$position} {
+    @extend .icon-#{$icon};
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    background-color: $background-color;
+    color: $color;
+    @if $replace {
+      font-size: 1rem;
+    }
+    @content;
+  }
+}

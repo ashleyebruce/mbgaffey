@@ -1,0 +1,77 @@
+.small-third {
+  width: 33.33%;
+}
+
+.small-push-third {
+  left: 33.33%;
+  right: auto;
+}
+
+.medium-third {
+  @media #{$medium-up} {
+    width: 33.33%;
+  }
+}
+
+.medium-push-third {
+  @media #{$medium-up} {
+    left: 33.33%;
+    right: auto;
+  }
+}
+
+.large-third {
+  @media #{$large-up} {
+    width: 33.33%;
+  }
+}
+
+.large-push-third {
+  @media #{$large-up} {
+    left: 33.33%;
+    right: auto;
+  }
+}
+
+// Reset margin and padding on figure element
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+// Add some basic styling for figcaption element
+figcaption {
+  margin-bottom: rem-calc(20);
+  margin-top: rem-calc(10);
+  color: $figcaption-color;
+}
+
+// Add the alignment classes used by the WordPress media library
+.alignleft {
+  float: left;
+
+  &.wp-caption {
+    margin: rem-calc(7) $column-gutter/2 rem-calc(7) 0;
+  }
+}
+
+.alignright {
+  float: right;
+}
+
+blockquote,
+img {
+  &.alignleft {
+    margin: rem-calc(7) $column-gutter/2 rem-calc(7) 0;
+  }
+
+  &.alignright {
+    margin: rem-calc(7) 0 rem-calc(7) $column-gutter/2;
+  }
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

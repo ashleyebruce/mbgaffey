@@ -1,0 +1,11 @@
+section.hero {
+  height: 400px;
+  @media #{$medium-up} {
+    height: 600px;
+  }
+  @media #{$large-up} {
+    height: 800px;
+  }
+  background-size: cover;
+  background-position: 50% 50%;
+}

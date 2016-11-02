@@ -1,0 +1,15 @@
+/* Global config */
+@import "config/fonts"; // Your custom fonts
+@import "config/colors"; // Your custom color scheme
+@import "config/variables"; // Your custom variables
+@import "config/settings"; // Default settings file. Uncomment each setting you need to change
+@import "config/mixins"; // Your custom mixins
+
+/* Foundation 5 */
+@import "foundation"; // Foundation 5 by Zurb
+
+/* Site structure */
+@import "site/globals";
+@import "site/page";
+@import "site/posts";
+@import "site/templates";

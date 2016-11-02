@@ -1,0 +1,40 @@
+section.hero-text {
+  text-align: center;
+  h1 {
+    height: 542px;
+    margin: 0;
+    line-height: 542px;
+    font-size: 112px;
+    text-transform: lowercase;
+    font-style: italic;
+    font-family: JosefinSans, $font-family-sans-serif;
+    color: white;
+  }
+}
+section.about-me {
+  padding: 75px 0;
+  background-color: #f7f6f6;
+  h2 {
+    margin-bottom: 19px;
+    font-size: 45px;
+    text-align: center;
+  }
+  ul {
+    width: 100%;
+    li {
+      margin: 0;
+      margin-bottom: 30px;
+      list-style: none;
+      font-family: JosefinSans, $font-family-sans-serif;
+      text-align: center;
+      color: #1f1f1f;
+      .title {
+        font-size: 22.5px;
+      }
+      .description {
+        line-height: 19px;
+        font-size: 16px;
+      }
+    }
+  }
+}
